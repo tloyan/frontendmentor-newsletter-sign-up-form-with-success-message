@@ -11,7 +11,7 @@ export function SignupForm({
   action: (payload: FormData) => void;
 }) {
   return (
-    <form action={action} className="space-y-6">
+    <form action={action}>
       <div className="flex flex-col space-y-2">
         <div className="flex justify-between text-xs font-bold">
           <label htmlFor="email">Email address</label>
@@ -35,12 +35,12 @@ export function SignupForm({
 
 function SubmitButton() {
   const { pending } = useFormStatus();
-  return (
+  return (    
     <button
       type="submit"
       disabled={pending}
       className={cn(
-        "h-14 w-full rounded-lg bg-neutral-1 font-bold text-white",
+        "h-14 w-full rounded-lg bg-neutral-1 font-bold text-white mt-6",
         pending
           ? "bg-neutral-3"
           : "from-[#FF6A3A] to-[#FF527B] hover:bg-gradient-to-b hover:bg-gradient-to-t hover:shadow-[0_16px_32px_0px_rgba(255,97,85,.5)]",
