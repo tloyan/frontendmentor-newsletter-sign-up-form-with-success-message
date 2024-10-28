@@ -9,7 +9,7 @@ import illustrationDesktop from "@/public/illustration-sign-up-desktop.svg";
 import { signup } from "@/app/actions/newsletter/signup";
 
 export function NewsletterSignup() {
-  const [state, formAction] = useFormState(signup, { errors: {} });
+  const [state, formAction] = useFormState(signup, { success: false });
 
   if (state?.success) {
     return <SignupSuccess />
