@@ -6,7 +6,14 @@ const schema = z.object({
   email: z.string().email()
 })
 
-export async function signup(prevState: any, formData: FormData) {
+export interface SignupStateType {
+  errors?: {
+    email?: string[];
+  };
+  success?: boolean;
+}
+
+export async function signup(prevState: SignupStateType, formData: FormData) {
   const validatedFields = schema.safeParse({
     email: formData.get("email")
   })

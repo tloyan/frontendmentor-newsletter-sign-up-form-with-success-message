@@ -1,22 +1,13 @@
 import { useFormStatus } from "react-dom";
+
 import { cn } from "@/app/utils/cn";
+import { SignupStateType } from "@/app/actions/newsletter/signup";
 
 export function SignupForm({
   state,
   action,
 }: {
-  state?:
-    | {
-        errors?: {
-          email?: string[] | undefined;
-        };
-        success?: undefined;
-      }
-    | {
-        success: boolean;
-        errors?: undefined;
-      }
-    | null;
+  state?: SignupStateType;
   action: (payload: FormData) => void;
 }) {
   return (
